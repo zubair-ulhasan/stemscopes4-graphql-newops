@@ -1,0 +1,22 @@
+# New GraphQL operations discovered on StemScopes 4.0 (stem.acceleratelearning.com/api/graphql)
+# not present in the original openapi-spec (1).yaml. Found via live browser traffic capture
+# during a security audit, 2026-10-20. Field signatures below reflect observed usage, not
+# introspection (introspection is disabled on this endpoint).
+
+extend type Query {
+  lookupRoles: [Role]
+  district: District
+  school: School
+  grades: [Grade]
+  googleClassroomConfigured: Boolean
+  activeContentGroupsWithSchools: [ContentGroup]
+  activeContentGroups: [ContentGroup]
+  districtSetupStatus: DistrictSetupStatus
+  districtSettingsRoster: DistrictSettingsRoster
+  districtSettingsUserManagement: DistrictSettingsUserManagement
+  districtSettingsLessonPlanner: DistrictSettingsLessonPlanner
+  districtSettingsKnowledgeBase: DistrictSettingsKnowledgeBase
+  studentNotebooks: StudentNotebookConnection
+  studentStudentAssignments: StudentAssignmentConnection
+  districtStudentAssignments(studentId: String!): StudentAssignmentConnection
+}
